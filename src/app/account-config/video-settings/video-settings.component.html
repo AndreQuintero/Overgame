@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="offset-lg-2 col-lg-8 titleConfigConta ml40PMob text-align-c">
+      <h2>Configurações de Vídeo</h2>
+  </div>
+</div>
+
+<div class="row pt5">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-12 offset-lg-2 col-lg-10">
+                  <table class="table">
+                          <thead class="thead-orange">
+                              <tr>
+                                  <th scope="col">Vídeo</th>
+                                  <th scope="col">Título</th>
+                                  <th scope="col">Visualizações</th>
+                                  <th scope="col">Editar</th>
+                                  <th scope="col">Excluir</th>
+                              </tr>
+                          </thead>
+                          <tbody class="tbody-table">
+                            
+                              <tr class="trsModal" *ngFor="let video of videos; let i = index">
+                                  <td>
+                                    <video src="../../../assets/midia/videos/{{video.videoCaminho}}"></video>
+                                  </td>
+                                  <td><p>{{video.titulo}}</p></td>
+                                  <td>{{video.visualizacoes}}</td>
+                                  <td><a [routerLink]="['/upload']" [queryParams]="{id: video.id}"><button class="btn-edit">Editar</button></a></td>
+                                  <td><button (click)="deleteVideoModal(video.id, i)" class="btn-delete">Excluir</button></td>
+                              </tr>
+                            
+                             
+                          </tbody>
+                  </table>
+                 
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-12 col-md-6 offset-lg-5 col-lg-4 pagination">
+              
+              
+                  <strong *ngIf="page > 1 " (click)="changePage('left')"><span><i class="fa fa-arrow-left arrows"></i>&nbsp;&nbsp;&nbsp;</span></strong>
+                      <span>
+                      Página <strong> <span class="pointer">{{page}}</span></strong><span class="pointer">/{{totalPages}}</span>
+                      </span>&nbsp;&nbsp;&nbsp;
+                  <strong *ngIf="page < totalPages" (click)="changePage('right')"><span><i class="fa fa-arrow-right arrows pr10"></i></span></strong>
+                      <input min="1" max="{{totalPages}}" value="{{page}}" #inputPag class="inputPag" type="number"><button (click)="changePage('btn')" class="buttonPag">GO</button>
+              
+              
+          </div>
+      </div>       
+  </div>
+</div>

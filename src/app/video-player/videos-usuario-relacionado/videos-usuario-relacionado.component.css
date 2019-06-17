@@ -1,0 +1,8 @@
+.moreUserVideos a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.titleVideoUser a {
+    color: #f49a1b;
+}

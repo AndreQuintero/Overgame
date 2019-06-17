@@ -1,0 +1,67 @@
+<app-header *ngIf="escondeMenusHeader()" [recebeMenuM] = "menusM"></app-header>
+<section class="container-fluid">
+
+    <div class="row">
+        <aside *ngIf="escondeMenusHeader()" class="col-lg-2 menu" #menuDesktop data-menu="esconde">
+        <span (click)="openNav()"  class="iconMenu"><i class="fa fa-navicon"></i></span>
+        <ul>
+            <li>
+            
+            </li>
+            <li [routerLink]="['/']" [queryParams]="{title: '', page: 1}">
+                Home &nbsp;&nbsp; <i class="fa fa-home"></i>
+            </li>
+            <li  [routerLink]="['/upload']">
+                Upload &nbsp;&nbsp; <i class="fa fa-upload"></i>
+            </li>
+            <li [routerLink]="['/conta']">
+                Conta &nbsp;&nbsp; <i class="fa fa-user-circle"></i>	
+            </li>
+            <li [routerLink]="['/emAlta']">
+                Em Alta &nbsp;&nbsp; <i class="fa fa-signal"></i>
+            </li>
+            <li [routerLink]="['/liked']">
+                Gostei  &nbsp;&nbsp; <i class="fa fa-thumbs-up"></i>
+            </li>
+            <li (click)="logout()" *ngIf="loggedIn()">
+                Sair  &nbsp;&nbsp; <i class="fa fa-sign-out"></i>
+            </li>
+            <li>
+            
+            </li>
+        </ul>
+        </aside>
+        
+        <!-- MOBILE-->
+        <aside   data-menuM="abreMobile" class="menuMobileBody">
+            
+            <ul>
+                
+                <li [routerLink]="['/']" [queryParams]="{title: '', page: 1}">
+                    Home  &nbsp;&nbsp; <i class="fa fa-home"></i>
+                </li>
+                <li [routerLink]="['/upload']">
+                    Upload &nbsp;&nbsp; <i class="fa fa-upload"></i>
+                </li>
+                <li  [routerLink]="['/conta']">
+                    Conta &nbsp;&nbsp; <i class="fa fa-user-circle"></i>
+                </li>
+                <li  [routerLink]="['/emAlta']">
+                    Em Alta  &nbsp;&nbsp; <i class="fa fa-signal"></i>
+                </li>
+                <li [routerLink]="['/liked']">
+                    Gostei &nbsp;&nbsp; <i class="fa fa-thumbs-up"></i>
+                </li>
+                <li  (click)="logout()" *ngIf="loggedIn()">
+                        Sair  &nbsp;&nbsp; <i class="fa fa-sign-out"></i>
+                </li>
+                
+            </ul>
+            
+        </aside>
+   
+    </div>
+    <router-outlet></router-outlet>
+    <app-snackbar></app-snackbar>
+    <app-modal-confirm></app-modal-confirm>
+</section>

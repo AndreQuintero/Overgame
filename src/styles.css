@@ -1,0 +1,1403 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+@media only screen and (min-width: 992px) {
+
+    [data-anime]{
+
+        opacity: 0;
+        transition:  1s;
+    }
+    
+    [data-anime="left"]{
+        transform: translate3d(-150px, 0, 0);
+    }
+    
+    [data-anime="right"]{
+        transform: translate3d(100px, 0, 0);
+    }
+    
+    [data-anime="top"]{
+        transform: translate3d(0, -100px, 0);
+    }
+    
+    [data-anime].animate{
+        opacity: 1;
+        transform: translate3d(0px, 0px, 0px);
+    }
+    
+    [data-anime="bottom"]{
+        transform: translate3d(0, 100px, 0);
+    }
+
+}
+
+.titleConfigConta{
+    text-align: center;
+    color: #f49a1b;
+    padding-top: 5%;
+}
+
+
+
+.avatarImgConta img{
+    width: 150px;
+    height: 150px;
+    border-radius:50%;
+    position: relative;
+    cursor: pointer;
+}    
+
+.Overlay {
+    position: absolute;
+    top: 0;
+   
+    width: 150px;
+    height: 150px;
+    border-radius:50%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #191919;
+    cursor: pointer;
+}
+
+.avatarImgConta:hover .Overlay {
+    opacity: 0.8;
+  }
+
+  .textOverlay{
+    color: white;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+.avatarImgConta figcaption{
+      font-weight: bold;
+      text-align: center;
+  }
+
+  .avatarImgConta input[type="file"]{
+      opacity: 0;
+  }
+
+  .avatarImgConta{
+      margin-top: 5%;
+  }
+  .btn-save-div{
+      float: right;
+      margin-right: 15%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .avatarImgConta{
+        text-align: center;
+    }
+    .Overlay{
+        text-align: center;
+        margin-left: 25%;
+    }
+    .titleConfigConta{
+        padding-top: 20%;
+    }
+    .formConta{
+        margin-left: 10%;
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+    .titleConfigConta{
+        padding-top: 10%;
+    }
+    .avatarImgConta{
+        text-align: center;
+    }
+  }
+
+  .table video{
+      width: 100px;
+      height: 100px;
+      margin-top: -12%; 
+  }
+  .thead-orange{
+      background-color: #f49a1b;
+      color: #fff;
+      border: none;
+  }
+
+  .tbody-table tr:hover {
+    background-color: #f7f7f7;
+  }
+
+  .btn-edit{
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #f49a1b; 
+    color: #191919;
+    transition: 100ms ease-in;
+    font-weight: 700; 
+  }
+
+
+
+
+.btn-delete{
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid red; 
+    color: red;
+    transition: 100ms ease-in;
+    font-weight: 700; 
+  }
+
+
+  .snackbar{
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #f49a1b; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+   
+  }
+
+  .snackbarShow{
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  /* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+
+
+
+  .overgameHeaderModal{
+      background-color: #f49a1b;
+      color: #fff;
+      text-align: center;
+  }
+  .overgameClose{
+      color: #fff;
+  }
+
+  .overgameClose:hover{
+    color: #191919;
+  }
+
+ .w3-animate-zoom {
+     animation:animatezoom 0.6s;
+ }
+@keyframes animatezoom{
+    from{
+        transform:scale(0)
+    } 
+    to{
+        transform:scale(1)
+    }
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif !important;
+    padding: 0;
+    margin: 0;
+}
+
+.mr0{
+    margin-right: 0px !important;
+}
+
+.pt10{
+    padding-top: 10%;
+}
+
+.pb1{
+    padding-bottom: 1%;
+}
+
+.pb4{
+    padding-bottom: 4%;
+}
+
+.pb20{
+    padding-bottom: 20%;
+}
+
+.txt-align-l{
+    text-align: left;
+}
+
+.pr20{
+    padding-right: 20%;
+}
+
+.text-align-c{
+    text-align: center;
+}
+
+.pt5{
+    padding-top: 5%;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.pr10{
+    padding-right: 10px;
+}
+
+.pl20p{
+    padding-left: 20%;
+}
+
+.pr20p{
+    padding-right: 20%;
+}
+
+.pr5p{
+    padding-right: 5%;
+}
+
+@media only screen and (max-width: 600px) {
+    .pt10Mobile{
+        padding-top: 10%;
+    }
+    .pt15Mobile{
+        padding-top: 15%;
+    }
+    .ml10PMob{
+        margin-left: 10%;
+    }
+    .ml30PMob{
+        margin-left: 30%;
+    }
+    .ml40PMob{
+        margin-left: 40%;
+    }
+    .pb10M{
+        padding-bottom: 10px;
+    }
+    .txt-align-cM{
+        text-align: center;
+    }
+}
+
+.cinzaEscuro{
+    color: #191919;
+}
+
+.orangeStrongColor{
+    color:#f49a1b;
+    font-weight: bold;
+}
+
+.wd100{
+    width: 100% !important;
+}
+
+
+
+.header{
+    background-color: #f49a1b;
+    min-height: 50px;
+    position: fixed;
+    z-index: 10;
+}
+
+.login{
+    margin-top: 2px;
+}
+
+.login button{
+    width: 250px;
+    height: 45px;
+    background-color: transparent;
+    border: 2px solid #fff; 
+    color: #fff;
+    transition: 100ms ease-in;
+}
+
+@media only screen and (max-width: 600px) {
+    .login button{
+        float: right;
+    }
+}
+
+.login button:hover{
+    border: 2px solid #191919; 
+    color: #191919;
+}
+
+.login i{
+    padding-right: 10px;
+}
+.login label {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login img {
+   
+    width: 40px;
+    height: 39px;
+    border-radius: 50%; 
+}
+
+.videoLogin{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top:-25%;
+    left: -10%;
+    min-width: 100%; 
+    min-height: 100%;
+  }
+  
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+      .videoLogin{
+        left: -70%;
+      }
+  
+  }
+  
+  @media only screen and (max-width: 600px) {
+      .mt85M{
+          margin-top: 85%;
+      }
+      .videoLogin{
+          left:-300%;
+          top:-40%;
+      }
+  }
+  
+  .loginScreen{
+      background-color: #fff;
+      border: none;
+      opacity: 0.9;
+      margin-top: 5%;
+      border-radius: 15px 15px 15px 15px;  
+  }
+  
+  .textoLogoLogin{
+      color: #191919;
+      text-align: center;
+      font-size: 1.2rem;
+      padding-top: 20%;
+      font-weight: 700; 
+      padding-bottom: 25px;
+  }
+  
+  .inputLogin{
+      font-weight: 500;
+      color: #191919;
+  }
+  
+  
+  .btn-login{
+      width: 150px;
+      height: 40px;
+      background-color: transparent;
+      border: 2px solid #f49a1b; 
+      color: #191919;
+      transition: 100ms ease-in;
+      font-weight: 700;
+  }
+  .btn-login:hover{
+      background-color:#f7f7f7;
+  }
+  
+  
+  .voltarAosVideos{
+      padding-top: 3%;
+      font-size: 1.5rem;
+     
+  }
+  
+  .voltarAosVideosText:hover{
+      color:#f7f7f7;
+  }
+  .voltarAosVideosText{
+      color: #E7E7E7;
+      cursor: pointer;
+  }
+  
+  .cadastrese{
+      text-align: center;
+      padding-top: 5%;
+      
+  }
+  
+  .cadastrese a {
+      color:#f49a1b;
+  }
+  
+  .cadastrese a:hover{
+      color: #E7E7E7;
+  }
+
+  .menu{
+    margin-top: 50px;
+    position: fixed !important;
+    background-color: #191919;
+    color: #fff;
+    z-index: 10;
+    height: 100%;
+}
+
+.menu ul{
+    list-style: none;
+    margin-left: -7%;
+    width: 115% ;
+}
+
+.menu li{
+    margin-left: -25%;
+    padding: 15%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 150ms ease-in;
+}
+
+.menu li:hover{
+
+    background-color: #5e5e5e;
+}
+
+.menu li:last-child{
+    padding-bottom: 45%;
+} 
+.menu li:last-child:hover{
+    background-color: #191919;
+    cursor: auto;
+} 
+
+.menu li:first-child{
+    background-color: #191919;
+    cursor: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .menu{
+        display: none;
+    }
+
+  }
+  .iconMenu{
+      padding-top: 15px;
+      color: #fff;
+      font-size: 1.5rem;
+      float: right;
+      cursor: pointer;
+  }
+  .iconMenu:hover{
+      color: #f49a1b;
+  }
+
+  [data-menu]{
+      transition: 0.5s ease-in-out;
+      opacity: 1;
+  }
+
+  [data-menuM]{
+    transition: 0.5s ease-in-out;
+    opacity: 1;
+}
+
+  [data-menu].esconde{
+      transform: translate3d(-175px, 0px, 0);
+      
+  }
+
+  [data-menu].abre{
+    transform: translate3d(0, 0px, 0);
+    
+}
+
+[data-menuM].fechaMobile{
+    width: 0%;
+}
+
+[data-menuM].abreMobile{
+    width: 50%;
+}
+@media only screen and (max-width: 600px) {
+    [data-menuM].abreMobile{
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .menuMobile{
+        display: none;
+    }
+    .iconMenuCel{
+        display: none;
+    }
+    .menuMobileBody{
+        display: none;
+    }
+}
+
+.iconMenuMobile{
+   
+    font-size: 2.0rem;   
+    cursor: pointer;
+    color: #fff;
+    
+}
+
+.iconMenuMobile:hover{
+    color: #191919;
+}
+
+.iconMenuCel{
+    float: left;
+    font-size: 2.0rem;   
+    cursor: pointer;
+    color: #fff;
+}
+
+.iconMenuCel:hover{
+    color: #191919;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    .iconMenuMobile{
+        margin-left: 40%;
+        
+    }
+    .iconMenuCel{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .menuMobile{
+        display: none;
+    }
+
+    .menuMobileBody{
+
+    }
+    
+}
+
+
+
+.menuMobileBody{
+    margin-top: 50px; 
+    height: 100%; /* 100% Full-height */
+    width: 0%; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    opacity: 0.8;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    background-color: #191919;
+    color: #fff;
+    z-index: 10;
+
+
+}
+
+.menuMobileBody ul{
+    
+    list-style: none;
+    width: 100% ;
+}
+
+.menuMobileBody li{
+   
+   
+    margin-left: -15px;
+    padding: 15%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 150ms ease-in;
+}
+
+
+.menuMobileBody li:hover{
+    background-color: #5e5e5e;
+}
+
+.containerPerfilDesc{
+    color: #191919;
+    background-color: #f7f7f7;
+   
+    padding-top: 10%;
+    padding-bottom: 5%;
+}
+
+.perfilName{
+    text-align: center;
+    color: #f49a1b;
+    padding-bottom: 10px; 
+}
+
+.containerPerfilDesc figure{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.containerPerfilDesc img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    
+}
+
+.containerPerfilDesc figcaption{
+   
+    font-weight: bold;
+    color: #191919;
+}
+
+.perfilDesc{
+    background-color: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 15px;
+    color: #191919;
+    font-weight: 600;
+    border-radius: 15px 15px 15px 15px; 
+}
+
+
+.videosPerfilUserTitle{
+    text-align:center;
+    color: #f49a1b;
+    padding-top: 30px;
+    padding-bottom: 15px; 
+
+}
+.searchInput{
+    width: 80%;
+    margin-top: 15%;
+    padding: 0 15px 0 15px;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid #191919; 
+    background-color: #f7f7f7;
+    outline-color: #f49a1b;
+    color: #191919;
+}
+
+.searchButton{
+    width:  20%;
+    height: 40px;
+    background-color: #f49a1b;
+    color: #fff;
+    /*border: 1px solid #191919; */
+    border: none;
+    border-bottom: 1px solid #191919;
+    outline-color: #f49a1b;
+    margin-top: 15%;
+}
+
+.searchButton:hover{
+    background-color: #f7f7f7;
+    color: #f4761b;
+    border-left: 1px solid #191919;
+   
+}
+
+.text-align-c{
+    text-align: center;
+}
+
+.searchInput::-webkit-input-placeholder  { color:#5e5e5e; font-style: italic;}
+.searchInput:-moz-placeholder { color:#5e5e5e; font-style: italic;}
+
+
+
+.videoBlock{
+    transition: 500ms ease-in;
+    overflow: hidden;
+    padding-bottom: 15px;
+}
+
+.videoBlock:hover{
+    transform: scale(1.1);
+    background-color: #f7f7f7;
+    overflow: hidden;
+}
+
+.videoGrid{
+    width: 90%;
+    height: 250px;
+    cursor: pointer;
+    transition: 500ms;
+    overflow: hidden;
+    border-radius: 15px 15px 15px 15px;
+}
+
+/*.videoGrid:hover{
+    transform: scale(1.1);
+}*/
+
+a:link{
+    text-decoration: none;
+   
+}
+a{
+ color: #191919;
+}
+
+a:hover{
+    color: #191919;
+}
+
+.likesAndDislikes{
+   
+    margin-top: -5%;
+    font-size: 0.8rem;
+}
+
+.like-blue{
+    color: #065fd4;
+   
+}
+
+.like-red{
+    color: #ff0000;
+   
+}
+
+.like-gray{
+    color: #909090;
+}
+
+.views{
+    color: #5e5e5e;
+}
+
+.user-views{
+    color: #5e5e5e;
+    font-style: italic;
+}
+
+.titleVideo{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: -10%;
+}
+
+
+.pagination{
+    text-align: center;
+    color: #f49a1b;
+    font-size: 1.2rem;
+    padding-bottom: 5%;
+    margin-left:47%; 
+   
+}
+
+
+@media only screen and (max-width: 600px) {
+    
+    .pagination{
+        margin-left:15%; 
+       
+        
+    }
+
+    .videoBlock:hover{
+        transform: scale(1.0);
+        background-color: #f7f7f7;
+    }
+
+ }
+ @media only screen and (min-width: 601px) and (max-width: 768px) {
+    
+    .pagination{
+        margin-left:37%; 
+       
+        
+    }
+
+    .videoBlock:hover{
+        transform: scale(1.0);
+        background-color: #f7f7f7;
+    }
+
+ }
+ 
+
+
+.arrows{
+
+    cursor: pointer;
+    transition: 150ms ease-in;
+}
+.arrows:hover{
+    transform: scale(1.2);
+}
+
+.inputPag{
+    
+    padding: 5px;
+    width: 40px;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #191919; 
+    background-color: #f7f7f7;
+    outline-color: #f49a1b;
+    color: #191919;
+}
+
+.buttonPag{
+    width: 40px;
+    height: 30px;
+    background-color: #f49a1b;
+    color: #fff;
+    /*border: 1px solid #191919; */
+    border: none;
+    outline-color: #f49a1b;
+}
+
+.buttonPag:hover{
+    background-color: #f7f7f7;
+    color: #f49a1b;
+    border-left: 1px solid #191919;
+}
+
+.preview{
+    width: 100%;
+    height: 300px;
+    background-color: #f7f7f7;
+    margin-top: 5%;
+    text-align: center;
+    cursor: pointer;
+    
+}
+
+.uploadTitle{
+    color: #191919;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.messageUpload{
+    margin-top: 30%;
+    text-align: center;
+    color: #5e5e5e;
+    
+}
+
+.loadingUpload{
+    margin-top: 25%;
+    text-align: center;
+    display: none;
+}
+
+.messageUpload i{
+    font-size: 30px;
+    cursor: pointer;
+    
+}
+
+.formUpload{
+    padding-left: 3%;
+    margin-top: 5%;
+}
+.form-group label, input{
+    display: block ;
+}
+
+.form-group label{
+    color:#f49a1b;
+    font-weight: bold;
+} 
+
+.form-group input, textarea{
+    width: 85%;
+    border: none;
+    border-bottom: 1px solid #191919;
+    color: #191919;
+    padding-left: 5px; 
+    outline-color: #f49a1b;
+
+}
+
+.form-group textarea{
+    resize: none;
+    height: 65px;   
+}
+
+.videoPreUpload{
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.form-group:first-child{
+    padding-top: 3%;
+}
+.formUpload input[type="file"]{
+    opacity: 0;
+}
+
+.btn-upload{
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #f49a1b; 
+    color: #f49a1b;
+    font-weight: bold;
+    transition: 100ms ease-in;
+}
+
+.btn-upload:hover{
+    background-color: #f49a1b;
+    color: #191919;
+}
+
+.btn-save{
+    width: 100px;
+    height: 40px;
+    background-color: #f49a1b;
+    border: 2px solid #191919; 
+    color: #fff;
+    font-weight: bold;
+    transition: 100ms ease-in;
+}
+
+.btn-save:hover{
+    background-color: #fff;
+    color: #191919;
+}
+
+.playerVideo{
+    width: 100%;
+    
+}
+
+.videoUserRel{
+    box-shadow: #f49a1b 0px 0px 1px 1px;
+    overflow-y: scroll;
+    
+   
+}
+
+.videoUserRel::-webkit-scrollbar              { 
+    background: #f49a1b;
+    width: 15px; 
+    border-radius: 15px 15px 15px 15px;
+    
+}
+.videoUserRel::-webkit-scrollbar:hover{
+    cursor: pointer;
+}         
+.videoUserRel::-webkit-scrollbar-button       {
+  background-color: #f49a1b;
+  border-radius: 15px 15px 15px 15px;
+ }
+.videoUserRel::-webkit-scrollbar-track        { /* 3 */ }
+.videoUserRel::-webkit-scrollbar-track-piece  { /* 4 */ }
+.videoUserRel::-webkit-scrollbar-thumb        { 
+    background-color: #191919;
+    border-radius: 15px 15px 15px 15px;
+ }
+
+@media only screen and (min-width: 992px) {
+    .videoUserRel{
+        height: 85vh;
+        position: fixed !important;
+        margin-top: -7%;
+    }
+    .titleVideoUserRelTablet{
+        display: none;
+    }
+    .infoVideosUserTablet{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    .infosVideoData{
+        display: none;
+ 
+    }
+    .videoUserBloco{
+        padding-bottom: 10px;
+    }
+    .DescTitleVideoUser{
+        display: none;
+    }
+  .infoVideosUserTablet{
+   
+      padding-bottom: 10px;
+
+  }
+  .titleVideoUserRelTablet{
+      font-size: 1.2rem;
+      color: #191919;
+      margin-top: 10%;
+  }
+  .videoUserRel{
+      height: 60vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .infosVideoData{
+        display: none;
+ 
+    }
+    
+    .DescTitleVideoUser{
+        display: none;
+    }
+
+    .infoVideosUserTablet{
+   
+        padding-bottom: 10px;
+  
+    }
+    .titleVideoUserRelTablet{
+        font-size: 1.2rem;
+        color: #191919;
+        margin-top: 10%;
+    }
+
+    .videoUserBloco{
+        width: 100% !important;
+        text-align: center;
+    }
+    .infoVideosUser{
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .videoUserRel{
+        height: 60vh;
+    }
+    .videoUserDescInfo{
+        font-size: 0.9rem;
+
+    }
+    .videoUserDescInfo hr{
+        margin-top: 30px !important;
+    }
+    .VideoImgGame{
+        width: 255px !important;
+    }
+    .VideoImgGame img{
+        width: 70px;
+        height: 70px;
+        border-right:3px solid #191919;
+    }
+    .VideoImgGameName{
+        font-size: 1.2rem !important;
+        margin-right: 10% !important;
+        margin-top: 10% !important;
+    }
+
+    .writteComment{
+        width: 100% !important;
+        text-align: center;
+    }
+    .writteComment input{
+        margin-top: 10px !important;
+    }
+    .buttonsComments{
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    .buttonsCommentsLaranja{
+        margin: 10px;
+    }
+
+}
+
+.videoUser{
+    width: 100%;
+}
+
+.titleVideoUser{
+    text-align: left;
+    padding-top: 10px;
+    color: #191919;
+       
+}
+
+.titleVideoUser hr{
+    margin-top: -5px;
+}
+
+.videoUserBloco{
+   
+    width: 50%;
+}
+
+.infoVideosUser{
+   
+    width: 50%;
+    font-size: 0.8rem;
+    padding-left: 10px;
+    color: #AFAFAF;
+}
+
+.titleVideoUserRel{
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.moreUserVideos hr{
+    margin-top: 0px;
+}
+
+.infosVideo{
+    text-align: left;
+    padding-bottom: 10px;
+}
+.infosVideo p{
+    font-size: 1.3rem;
+}
+
+.videoInformations{
+    margin-top: -10px;
+}
+
+
+.VideoDescricao{
+    width: auto;
+    /*background-color:rgba(244, 154, 27, 0.2);*/
+    background-color: #f7f7f7;
+  /*  box-shadow: #f49a1b 0px 0px 1px 1px;*/
+    
+    padding-bottom: 2%;
+    border-radius: 5px 5px 5px 5px; 
+}
+
+.videoUserDesc{
+    margin: 5%;
+    padding-top: 5%;
+   
+    overflow: hidden;
+    color: #191919;
+
+}
+
+.videoUserDesc img{
+    width: 50px;
+    height: 50px;
+    border-radius:50%;
+    cursor: pointer;
+    float: left;
+   
+}
+
+.videoUserDesc hr{
+    margin-top: 5%;
+}
+
+.videoUserDescInfo{
+    cursor: pointer;
+    margin-left: 10%;
+    line-height: 0.3;
+    margin-top: 1%;
+    
+   
+}
+
+.videoDescInfo{
+    margin: 5%;
+    
+    overflow: hidden;
+    display: block;
+    opacity: 1;
+    transition: 200ms ease-in;
+}
+
+.videDescOpen{
+    transition: 200ms ease-in;
+    margin: 5%;
+    height: auto;
+    display: block;
+    opacity: 1;
+}
+
+
+.VideoImgGame{
+    margin: 5%;
+    background-color: #f49a1b;
+    width: 300px;
+    cursor: pointer;
+    border:3px solid #191919;
+}
+
+.VideoImgGame img{
+    width: 100px;
+    height: 100px;
+    border-right:3px solid #191919;
+}
+
+.VideoImgGameName{
+    text-align: center;
+    color: #fff;
+    float: right;
+    margin-right: 15%;
+    margin-top: 10%;
+    font-size: 1.5rem;
+}
+
+.comentarios{
+    width: 100%;
+    overflow: hidden;
+   /* border:1px solid #f49a1b;*/
+   
+}
+
+.commentTitle{
+    margin: 5%;
+    color: #f49a1b;
+}
+
+.writteComment{
+    margin: 5%;
+    width: 85%;   
+}
+
+.writteComment img{
+    width: 50px;
+    height: 50px;
+    border-radius:50%;
+    cursor: pointer;
+}
+
+.writteComment input{
+    width: 80%;
+    padding: 0 15px 0 15px;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid #f49a1b; 
+    background-color: #f7f7f7;
+    outline-color: #f49a1b;
+    color: #191919;
+}
+.writteComment input::-webkit-input-placeholder  { color:#5e5e5e; font-style: italic;}
+.writteComment input:-moz-placeholder { color:#5e5e5e; font-style: italic;}
+
+
+
+.buttonsComments{
+    margin:5%;
+    margin-top: 0%;
+    margin-right:10%; 
+    float: right;
+    
+    padding-bottom: 5px;
+   
+}
+
+.buttonsCommentsLaranja{
+    background-color: #f49a1b;
+    color: #fff;
+    font-weight: bold;
+}
+
+.buttonsCommentsLimpar{
+    background-color: #f7f7f7;
+    color: #191919;
+    font-weight: bold;
+}
+
+.buttonsComments button{
+    width: 150px;
+    height: 30px; 
+    border: none;
+}
+
+.divisor{
+    margin: 5%;
+    width: 90%; 
+    margin-left: 1%;  
+}
+
+.othersComments{
+    margin: 5%;
+    width: 100%;  
+}
+.othersComments hr{
+    width: 85%;
+    margin-left: 0%;
+}
+
+.othersComments img{
+    width: 50px;
+    height: 50px;
+    border-radius:50%;
+    cursor: pointer;
+}
+
+.titleHeaderComment{
+    cursor: pointer;
+}
+
+.edit{
+    font-weight: bold;
+    color: #5e5e5e;
+    font-size: 0.7rem;
+}
+.descComment{
+    margin-top: 4%;
+    width: 80%;
+}
+
+
+.dataComment{
+    color: #5e5e5e;
+    font-size: 0.7rem;
+    font-style: italic;
+}
+
+.comentariosPaged{
+    text-align: center;
+    color: #f49a1b;
+    font-size: 1.2rem;
+    padding-bottom: 5%;
+   
+}

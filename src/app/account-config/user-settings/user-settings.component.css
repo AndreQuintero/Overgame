@@ -1,0 +1,10 @@
+.disabled {
+    background-color: #f7f7f7;
+    cursor: not-allowed;
+    color: #191919;
+}
+
+.error-message{
+    font-size: 12px;
+    color: red;
+}

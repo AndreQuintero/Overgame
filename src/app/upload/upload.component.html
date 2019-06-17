@@ -1,0 +1,50 @@
+<div class="row">
+            
+  <div class="col-sm-12 offset-md-2 col-md-8 offset-lg-4 col-lg-5  uploadTitle pt10Mobile">
+         <h2>Upload de Vídeo</h2>
+  </div>
+</div>
+<div class="row">
+  <div *ngIf="isUpdate() === false" class="col-md-6 offset-lg-3 col-lg-4  preview ml10PMob" (click)="uploadClick()">
+      <video  #videoPrev class="videoPreUpload" src="#" controls></video>
+      
+      <div #messageUpload class="messageUpload">
+          <label><span><i class="fa fa-upload"></i></span></label>
+          <br>
+          <label>Clique para fazer o upload do video</label>
+      </div>
+  </div>
+    <div *ngIf="isUpdate()" class="col-md-6 offset-lg-3 col-lg-4  preview ml10PMob">
+        <video  *ngIf="videoObj !== undefined" #videoPrev class="videoPreUpload" style="display: block;"  src="../../assets/midia/videos/{{videoObj.videoCaminho}}" controls></video>
+            
+    </div>
+  <div class="col-md-6 col-lg-5 formUpload ml10PMob">
+      <h4>Informações do vídeo</h4>
+      <form [formGroup]="uploadForm">
+          <div class="form-group">
+              <label>Título do vídeo:</label>
+              <input formControlName="titulo" type="text">
+          </div>
+          <div class="form-group">
+              <label>Nome do jogo:</label>
+              <input formControlName="jogo" type="text">
+          </div>
+          <div class="form-group">
+              <label>Descrição:</label>
+              <textarea formControlName="descricao"></textarea>
+          </div>
+          <input *ngIf="isUpdate() === false" formControlName="video" #uploadInput type="file" id="filePrev" (change)="uploadPrev($event)" accept="video/mp4, video/avi">
+      </form>
+  </div>
+</div>
+<div  class="row">
+  <div *ngIf="isUpdate() === false" class="col-sm-4 col-md-2 offset-lg-3 col-lg-1 ml30PMob pb10M">
+      <button  (click)="uploadClick()"  class="btn-upload">Upload</button>
+  </div>
+  <div *ngIf="isUpdate() === false" class="col-sm-4 col-lg-1 ml30PMob">
+      <button (click)="upload()" [class.disabled]="!uploadForm.valid" [disabled]="!uploadForm.valid" class="btn-save">Salvar</button>
+  </div>
+  <div *ngIf="isUpdate()" class="col-sm-4 col-md-2 offset-lg-3 col-lg-1 ml30PMob pb10M">
+        <button  (click)="update()"  class="btn-upload">Atualizar</button>
+    </div>
+</div>

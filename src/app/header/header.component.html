@@ -1,0 +1,15 @@
+<header class="container-fluid header">
+  <div class="row">
+     
+      <div class="col-md-2 menuMobile">
+             
+          <span (click) = "abreFechaMobile()" class="iconMenuMobile MM"><i class="fa fa-navicon"></i></span>
+                
+      </div> 
+      <div class="offset-md-5 offset-lg-9  col-md-5 col-lg-2 login">
+          <a *ngIf="loggedIn() === false" class=""  [routerLink]="['/login']"><button><i class="fa fa-sign-in"></i>Login</button></a>
+          <a [routerLink]="['perfil', userLogado().user.id]" [queryParams]="{videos: 'maisVistos', page: 1}" *ngIf="loggedIn() === true" class="" ><button><img src="../../assets/midia/avatares/{{userLogado().user.avatar}}">&nbsp;&nbsp;&nbsp; <label>{{userLogado().user.username}}</label></button></a>
+          <span (click) = "abreFechaMobile()"  class="iconMenuCel MM"><i class="fa fa-navicon"></i></span>
+      </div>
+  </div>
+</header>

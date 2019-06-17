@@ -1,0 +1,21 @@
+ <!-- Modal -->
+ <div [@modal-visibility]="modalVisibility" class="modal fade " role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered w3-animate-zoom" role="document">
+  <div class="modal-content">
+      <div class="modal-header overgameHeaderModal">
+      <h5 class="modal-title" id="exampleModalLongTitle">Aviso</h5>
+      <button (click)="fechaModal()" type="button" class="close overgameClose" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <div class="modal-body">
+         {{message}}
+      </div>
+      <div class="modal-footer">
+      <button (click)="fechaModal()" type="button" class="btn-edit" data-dismiss="modal">Fechar</button>
+      <button type="button" (click)="acao()" class="btn-delete">Excluir</button>
+      </div>
+  </div>
+  </div>
+</div>
+

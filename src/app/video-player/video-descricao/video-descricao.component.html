@@ -1,0 +1,24 @@
+<div class="VideoDescricao">
+  <div class="videoUserDesc">
+      <img src="../../../assets/midia/avatares/{{videoPai?.user.avatar}}" alt="avatar">
+      <div class="videoUserDescInfo">
+          <strong (click)="redirectToPerfil()" ><p>{{videoPai.user.username}}</p></strong>
+          <i><p>publicado em {{transformaData(videoPai.publicado)}}.</p></i>
+      </div>
+      <hr>
+      <div (click)="ocultaVerMais()" class="verMais pointer">
+              <strong *ngIf="verMais === true"><p>Ver menos <span><i class="fa fa-angle-up"></i></span></p></strong>
+              <strong *ngIf="verMais === false"><p>Ver mais <span><i class="fa fa-angle-down"></i></span></p></strong>
+      </div>
+      
+  </div>
+  <div class="videoDescInfo">
+      <p>{{descricao}}</p>
+  </div>
+  <div class="VideoImgGame">
+      <img src="../../../assets/midia/jogos/over.jpg" alt="logo do jogo">
+      <div class="VideoImgGameName">
+          <strong><p>{{videoPai.nomeJogo}}</p></strong>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div *ngIf="user !== undefined" class="row pt10Mobile">
+  <div class="col-lg-12 containerPerfilDesc ">
+      <h2 class="perfilName">Perfil de  {{user.username}}</h2>
+      <div class="row">
+          <div class="offset-lg-2 col-lg-2">
+                  <figure>
+                      <img src="../../assets/midia/avatares/{{user.avatar}}" alt="avatar">
+                      <figcaption>{{user.username}}</figcaption>
+                  </figure>
+          </div>
+          <div class="col-lg-7 perfilDesc">
+              <p>{{message}}</p>
+          </div>
+      </div>
+      
+  </div>
+      
+</div>
+
+<div *ngIf="user === undefined" class="row pt10Mobile">
+  <div class="col-lg-12 containerPerfilDesc ">
+      <h2 class="perfilName">Não foi possível achar este usuário :(</h2>
+      
+  </div>
+      
+</div>
+
+<ng-container *ngIf="user !== undefined">
+
+
+  <div class="row">
+    <div class="col-lg-12 videosPerfilUserTitle">
+        <h3>Vídeos de {{user.username}}</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 videosPerfilUserTitle">
+        <h5><span (click)="redirect(false)" [class.strong]="addStrong()" class="pointer">Mais Vistos</span> / <span (click)="redirect(true)"  [class.strong]="addStrong() === false" class="pointer">Últimos Adicionados</span></h5>
+    </div>
+</div>
+
+<app-video-search [userId]="user.id"></app-video-search>
+
+
+</ng-container>

@@ -1,0 +1,24 @@
+<div class="titleHeaderComment">
+  <img (click)="redirectToPerfil()" src="../../../assets/midia/avatares/{{comentario.usuarioComment.avatar}}" alt="avatar usuário"> &nbsp;&nbsp;&nbsp;
+  
+  <strong  (click)="redirectToPerfil()" class="cinzaEscuro">{{comentario.usuarioComment.username}}</strong> 
+  &nbsp;&nbsp;&nbsp; 
+  <span class="dataComment">{{transformaData(comentario.publicado)}}</span>
+  &nbsp;&nbsp;&nbsp; 
+  <span class="edit">Editar</span>
+</div>
+<div class="descComment">
+
+      {{comentario.mensagem}}
+
+ 
+</div>
+<div class="curtidasComments">
+  <span (click)="likeOuDislike('like')" #likeComment class="like-gray pointer">{{comentario.like}} <i class="fa fa-thumbs-up"></i></span> 
+  &nbsp; 
+  &nbsp; 
+  
+    
+  <span (click)="likeOuDislike('dislike')" #dislikeComment class="like-gray pointer" >{{comentario.dislike}} <i class="fa fa-thumbs-down"></i></span>
+</div>
+<hr>

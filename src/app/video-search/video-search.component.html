@@ -1,0 +1,44 @@
+<div *ngIf="perfil === false" class="row">
+  <div class="offset-md-2 col-md-8 offset-lg-4 col-lg-5 text-align-c pb4 pt10Mobile">
+      <div class="row">
+          
+              <input #inputSearch class="searchInput" type="text" placeholder="Pesquise por um vídeo">
+              <button (click)="redireciona(1)" class="searchButton"><i class="fa fa-search"></i></button>
+      </div>
+      
+  </div>
+</div>
+<div *ngIf="titleView !== '' && perfil === false " class="row pb4">
+    <div class="offset-lg-4 col-lg-5 text-align-c">
+        <h2>{{titleView}}</h2>
+    </div>
+        
+</div>
+<div class="row">
+  
+      
+  <div class="offset-lg-2"></div>
+  <ng-container  *ngFor="let video of videosArr; let i = index">
+      <div class="col-sm-12 col-md-6 col-lg-3 ">       
+          <app-video  [videoPai]="video"></app-video>
+      </div>
+      <div *ngIf="divisivelPorTres(i) === true" class="offset-lg-2"></div>
+  </ng-container>
+              
+</div>
+
+<div class="row pt5">
+  <div class="col-sm-12 col-md-6 offset-lg-5 col-lg-4 pagination">
+    
+      
+    <strong *ngIf="page - 1 > 0"><span (click)="previousNextPageVideo('left')"><i class="fa fa-arrow-left arrows"></i>&nbsp;&nbsp;&nbsp;</span></strong>
+    <span>
+      Página <strong> <span class="pointer">{{page}}</span></strong><span class="pointer">/{{totalPages}}</span>
+    </span>&nbsp;&nbsp;&nbsp;
+    <strong *ngIf="page < totalPages"><span (click)="previousNextPageVideo('right')"><i class="fa fa-arrow-right arrows pr10"></i></span></strong>
+    <input #inputPag min="1" max="{{totalPages}}" value="{{page}}" class="inputPag" type="number"><button (click)="previousNextPageVideo('botao')" class="buttonPag">GO</button>
+      
+      
+  </div>
+</div>
+

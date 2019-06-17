@@ -1,0 +1,46 @@
+<div class="titleVideoUser">
+  <strong><p>Últimos vídeos de  <a (click)="redirectToPerfil()" class="pointer">{{userName}}</a> </p></strong>
+  <hr>
+</div>
+
+
+   
+<div *ngFor="let video of videosUsuarioRelacionado" class=" moreUserVideos">
+    <a [routerLink]="['/video', video.id]">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6 videoUserBloco">
+                <video class="videoUser" src="../../../assets/midia/videos/{{video?.videoCaminho}}" ></video>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 infoVideosUser">
+                    <div class="infosVideoData">
+                            <span class="views"><i class="fa fa-eye"> {{video.visualizacoes}}</i> views</span><br>
+                            <span class="like-blue">{{calculaPorcentagem(video, true)}}% <i class="fa fa-thumbs-up"></i></span><br>    
+                            <span class="like-red"> {{calculaPorcentagem(video, false)}}% <i class="fa fa-thumbs-down"></i></span><br>  
+                            <span class="views">{{arrumaData(video.publicado)}}</span>  
+                    </div>
+                    
+                    <div class="titleVideoUserRelTablet">
+                        <strong><p>{{video.titulo}}</p></strong>
+                        <span class="views"><i class="fa fa-eye"> {{video.visualizacoes}}</i> views</span> &nbsp; &nbsp;
+                            <span class="views">{{arrumaData(video.publicado)}}</span><br> 
+                        <span class="like-blue">{{calculaPorcentagem(video, true)}}% <i class="fa fa-thumbs-up"></i></span> &nbsp; &nbsp;   
+                        <span class="like-red">{{calculaPorcentagem(video, false)}}% <i class="fa fa-thumbs-down"></i></span>  
+                            
+                    </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-lg-11 titleVideoUserRel">
+                <div class="DescTitleVideoUser">
+                        <strong><p>{{video.titulo}}</p></strong>
+                        
+                </div>
+                
+                
+            </div>
+        </div>  
+        <hr>
+    </a>
+        
+</div>
+

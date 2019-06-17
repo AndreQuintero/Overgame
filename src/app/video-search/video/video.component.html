@@ -1,0 +1,22 @@
+<a  [routerLink]="['/video', videoPai.id]">
+    <div (mouseover)="videoStart('over')"  (mouseout)="videoStart('out')" class="text-align-c videoBlock">
+        <video  [@videoSlide]="animation" #videoPlayer class="videoGrid " src="../../assets/midia/videos/{{videoPai.videoCaminho}}"></video>
+                
+        <div class="txt-align-l titleVideo">
+          <strong><p>{{videoPai.titulo}}</p></strong>
+          <div class="likesAndDislikes">
+              <span class="user-views"> <a [routerLink]="['perfil', videoPai.user.id]" [queryParams]="{videos: 'maisVistos', page: 1}"><u>{{videoPai.user.username}}</u></a></span> &nbsp;&nbsp;&nbsp;
+              <br>
+              <span class="views"><i class="fa fa-eye"> {{videoPai.visualizacoes}}</i> visualizações </span>&nbsp;&nbsp;&nbsp;
+              <span class="like-blue">{{calculaPorcentagem()}}% <i class="fa fa-thumbs-up"></i></span>
+          </div>
+          
+          
+        </div>
+    </div>
+</a>
+
+
+  
+
+                

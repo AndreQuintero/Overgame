@@ -1,0 +1,24 @@
+<div *ngFor="let comentario of comentariosPai" class="othersComments">
+ <app-comentario [comentario]="comentario"></app-comentario>
+</div>
+
+<div class="comentariosPaged">
+    <div class="row">
+        <div class="offset-md-3 offset-lg-4 col-lg-5">
+            <div class="row">
+              <strong><span (click)="changePageComments(page, 'left')"><i class="fa fa-arrow-left arrows"></i>&nbsp;&nbsp;&nbsp;</span></strong>
+              <span>
+                  Página <strong> <span class="pointer">{{page + 1}}</span></strong><span class="pointer">/{{totalPagesInput(totalPages)}}</span>
+              </span>&nbsp;&nbsp;&nbsp;
+              <strong><span (click)="changePageComments(page, 'right')"><i class="fa fa-arrow-right arrows pr10"></i></span></strong>
+              
+              <input #inputPag min="1" max="{{totalPages}}" value="1" class="inputPag" type="number"><button (click)="changePageComments(inputPag.value, 'left')" class="buttonPag">GO</button>
+              
+            </div>
+            
+            
+        </div>
+       
+    </div>
+    
+</div>

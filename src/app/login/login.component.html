@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-lg-12">
+      <video #backGroundVideo class="videoLogin" src="../../assets/midia/videos/Mercy-Login.mp4" >
+      </video>
+      <div class="row mt85M">
+          <div class="offset-md-1 offset-lg-1 col-md-6 col-lg-3 loginScreen">
+            <form [formGroup]="loginForm" (ngSubmit)="enviar()">
+              <div class="row">
+              
+                <div class="col-lg-12 textoLogoLogin">
+                    <label>Over Game</label>
+                </div>
+                <div class="col-lg-12 form-group">
+                    <label>Email:</label>
+                    <input formControlName="email" class="wd100" type="email">
+                    <span [class.errorForm]="verificaCampo('email')" >{{emailError}}</span>
+                </div>
+                <div *ngIf="router.url ==='/cadastro' " class="col-lg-12 form-group">
+                    <label>Username:</label>
+                    <input formControlName="username" class="wd100" type="text">
+                    <span [class.errorForm]="verificaCampo('username')" >{{usernameError}}</span>
+                </div>
+                <div class="col-lg-12 form-group">
+                    <label>Senha:</label>
+                    <input  formControlName="password" class="wd100" type="password">
+                    <span [class.errorForm]="verificaCampo('password')">{{passwordError}}</span>
+                    <br>
+                   
+                </div>
+                <div *ngIf="router.url ==='/cadastro'" class="col-lg-12 form-group">
+                    <label>Confirme a senha:</label>
+                    <input  formControlName="confirmPassword" class="wd100" type="password">
+                    <span [class.errorForm]="verificaCampo('confirmPassword')">{{confirmPasswordError}}</span>
+                </div>
+                <span *ngIf="errorLogin !== '' " class ="errorForm" >{{errorLogin}}</span>
+              </div>
+              <div class="row">
+                  <div class=" col-lg-12 text-align-c pt5">
+                      <button type="submit" [class.block]="!loginForm.valid" [disabled]='!loginForm.valid' class="btn-login">{{LoginCadastro}}</button>
+                  </div>
+              </div>
+              <div class="row  pb20">
+                  <div class="col-lg-12 cadastrese">
+                      <a *ngIf="router.url === '/login' " [routerLink]="['/cadastro']" ><u>Cadastre-se</u></a>
+                      <a *ngIf="router.url === '/cadastro' " [routerLink]="['/login']" ><u>Já tem uma conta? faça o Login</u></a>
+                  </div>
+              </div>    
+             
+            </form>
+           
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="offset-md-1 offset-lg-1 col-lg-5 voltarAosVideos">
+              <span  [routerLink]="['/']" [queryParams]="{title: '', page: 1}" class="voltarAosVideosText"><i class="fa fa-arrow-left"></i> <u>Voltar aos vídeos</u></span>
+          </div>
+      </div>
+  </div>
+</div>

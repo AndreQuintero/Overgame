@@ -1,0 +1,80 @@
+ <!--video principal-->
+ <div class="row">
+  <div class="offset-md-2 col-md-8 offset-lg-4 col-lg-5 text-align-c pb4 pt10Mobile">
+      <div class="row mr0">
+          
+              <input #inputSearch class="searchInput" type="text" placeholder="Pesquise por um vídeo">
+              <button (click)="redireciona()" class="searchButton"><i class="fa fa-search"></i></button>
+      </div>
+      
+  </div>
+</div>
+
+<div class="row">
+  <div class="offset-lg-2"></div>
+    <div class="col-md-12 col-lg-7">
+        <video *ngIf="video?.videoCaminho !== null" class="playerVideo" src="../../assets/midia/videos/{{video?.videoCaminho}}" controls>
+
+        </video>
+        <div class="infosVideo">
+            <strong><p>{{video?.titulo}}</p></strong>
+            <div class="videoInformations">
+                    <span class="views pr5p"><i class="fa fa-eye"> {{video?.visualizacoes}}</i> Visualizações</span>
+                    <span *ngIf="video !== null" #likeVideo (click)="likeDislike('like')" class="like-gray pointer">{{calculaPorcentagem(video, true)}}% <i class="fa fa-thumbs-up"></i></span> &nbsp;&nbsp; 
+                    <span *ngIf="video !== null" #dislikeVideo (click)="likeDislike('dislike')" class="like-gray pointer">{{calculaPorcentagem(video, false)}}% <i class="fa fa-thumbs-down"></i></span>
+            </div>
+              
+        </div>
+    </div>
+
+     <!--videos relacionados-->
+    <div *ngIf="videosUser?.length > 0"  class="col-md-12 offset-lg-9 col-lg-3 videoUserRel">
+
+        <app-videos-usuario-relacionado [userId]="video?.user.id" [userName]="video?.user.username" [videosUsuarioRelacionado]="videosUser"></app-videos-usuario-relacionado>
+
+    </div> 
+</div>
+<!-- Descricao do vídeo-->
+<div class="row" *ngIf="video?.id !== null">
+    <div class="offset-lg-2"></div>
+    <div class="col-lg-7 pb1">
+        <app-video-descricao  [videoPai]="video"></app-video-descricao>
+    </div>
+</div>
+<!--Comentários-->
+<div class="row">
+    <div class="offset-md-1 col-md-10 offset-lg-2 col-lg-7">
+        <div class="comentarios">
+                <div class="commentTitle">
+                        <strong><p>Comentários</p></strong>
+                </div>
+                <div *ngIf="isLoggedIn()" class="writteComment" [@comment-right]="animation">
+                    <div class="row">
+                        <img src="../../../assets/midia/avatares/{{userLoggendIn().user.avatar}}" alt="avatar usuário">&nbsp;&nbsp;&nbsp; <input #inputComment placeholder="Escreva um comentário" type="text">
+                    </div>
+                    
+                    <br>
+                    <div class="buttonsComments">
+                        <button (click)="limpar()" class="buttonsCommentsLimpar">Limpar</button>
+                        <button (click)="commentVideo()" class="buttonsCommentsLaranja">Enviar</button>
+                    </div>
+                    <br>
+                    <div class="divisor">
+                        <hr>
+                    </div>
+                </div>
+                <div *ngIf="isLoggedIn() === false" class="writteComment">
+                    <div class="row">
+                        <div class="col-lg-12 text-align-c" *ngIf="video !== null">
+                            <p class="facaLogin">Faça o <a [routerLink]="['/login']" [queryParams]="{videoId: video.id}">Login</a> para comentar</p>
+                        </div>
+                    </div>
+                    <div class="divisor">
+                        <hr>
+                    </div>
+                </div>
+                <app-comentarios *ngIf="comentarios !==undefined && videoId !== '' " [videoPaiId]="videoId" [comentariosPai]="comentarios" [totalPagesComment] ="totalPages" ></app-comentarios>
+        </div>
+           
+    </div>
+</div>
