@@ -1,6 +1,9 @@
 # Overgame
+Para subir o projeto, tenha instalado o node.js em sua máquina, no caminho da pasta execute o npm install e suba o projeto com o comando ng serve depois que o backend esteja rodando.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
+
 
 ## Development server
 
