@@ -37,7 +37,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.0",
     "moment": "^2.22.2",
-    "moment-timezone": "^0.5.11",
+    "moment-timezone": "^0.5.35",
     "popper.js": "^1.14.3",
     "rxjs": "6.0.0",
     "ubuntu-fontface": "^0.1.13",
@@ -48,7 +48,7 @@
     "jquery": "^3.0",
     "popper.js": "^1.14.3",
     "moment": "^2.17",
-    "moment-timezone": "^0.5.11",
+    "moment-timezone": "^0.5.35",
     "tempusdominus-core": "5.0.3"
   },
   "devDependencies": {
